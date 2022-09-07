@@ -299,7 +299,15 @@ header {
 
 .choose__box-image {
   margin-bottom: 23px;
+  width: 100px;
 }
+
+.choose__box-image img {
+  width: 100%;
+  height: 100px;
+}
+
+
 
 .choose__box-title {
   font-style: normal;
