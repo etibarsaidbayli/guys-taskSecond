@@ -113,7 +113,7 @@ featuredViewAllBtn.addEventListener("click", () => {
 
 function getFeaturedProducts(data) {
   return `
-    <div class="col-lg-4 col-md-6">
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="${data.id}00">
     <div class="featured__box">
         <div class="featured__hoverOn featured__hoverOn${data.id + 1}}">
             <button onclick=previewView(${
@@ -351,7 +351,7 @@ checkOutViewAllBtn.addEventListener("click", () => {
 
 function getCheckOutProducts(data) {
   return `
-  <div class=' ${data.classes.join(" ")} col-lg-3 col-md-6 all'>
+  <div class=' ${data.classes.join(" ")} col-lg-3 col-md-6 all' data-aos="fade-up" data-aos-delay="${data.id}00">
   <div class="featured__box check__out-box">
       <div class="featured__hoverOn check__out-hoverOn">
           <button onclick=checkOutPreviewFunc(${
