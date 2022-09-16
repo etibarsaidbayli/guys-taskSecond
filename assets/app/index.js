@@ -99,6 +99,10 @@ const checkOutWrapper = document.querySelector(".checkOut__wrapper");
 const checkOutPreview = document.querySelectorAll(".check__out-hoverOnBtn");
 const checkOutCart = document.querySelectorAll(".checkOutCart");
 
+const mobileBarBtn = document.querySelector(".mobile__bar");
+const closeMobileMenuBtn = document.querySelector(".close__mobile_menuBtn");
+const mobileMenu = document.querySelector(".mobile__menu");
+
 let count = (cartItemsCount.textContent = 0);
 const cartArr = [];
 const checkOutArr = [];
@@ -113,7 +117,9 @@ featuredViewAllBtn.addEventListener("click", () => {
 
 function getFeaturedProducts(data) {
   return `
-    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="${data.id}00">
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="${
+      data.id
+    }00">
     <div class="featured__box">
         <div class="featured__hoverOn featured__hoverOn${data.id + 1}}">
             <button onclick=previewView(${
@@ -134,8 +140,8 @@ function getFeaturedProducts(data) {
             <small class="feature__box-sale">${data.saleCount}</small>
         </div>
     </div>
-</div>`
-};
+</div>`;
+}
 
 /* preview click */
 Array.from(preview).forEach((item) => {
@@ -351,7 +357,9 @@ checkOutViewAllBtn.addEventListener("click", () => {
 
 function getCheckOutProducts(data) {
   return `
-  <div class=' ${data.classes.join(" ")} col-lg-3 col-md-6 all' data-aos="fade-up" data-aos-delay="${data.id}00">
+  <div class=' ${data.classes.join(
+    " "
+  )} col-lg-3 col-md-6 all' data-aos="fade-up" data-aos-delay="${data.id}00">
   <div class="featured__box check__out-box">
       <div class="featured__hoverOn check__out-hoverOn">
           <button onclick=checkOutPreviewFunc(${
@@ -478,4 +486,22 @@ function checkOutProductToModal(data) {
   
   
   `;
+}
+
+/* mobile menu showing toogle */
+
+mobileBarBtn.addEventListener("click", () => {
+  openMobileMenu();
+});
+
+closeMobileMenuBtn.addEventListener("click", () => {
+  closeMobileMenu();
+});
+
+function openMobileMenu() {
+  mobileMenu.classList.add("mobile__menu_show");
+}
+
+function closeMobileMenu() {
+  mobileMenu.classList.remove("mobile__menu_show");
 }
